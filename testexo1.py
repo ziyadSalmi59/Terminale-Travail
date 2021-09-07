@@ -72,6 +72,24 @@ def moyenneelem(liste):
 
 print(moyenneelem(liste))
 
+#while
+liste = [7,15,14,2,8]
+def recherche3 (liste):
+    """
+    renvoie les moyenne de elements
+    liste(list) : renferme une liste d'entiers
+    """
+    addmoyenne = 0
+    i = 0
+    while i <= len(liste) - 1:
+        i += 1
+        addmoyenne += liste[i-1]
+    addmoyenne /= len(liste)
+    
+    return addmoyenne
+    
+print(recherche3(liste))
+
 
 
         
