@@ -1,0 +1,36 @@
+#Exercice bac N°1:
+##def recherche (tab, n):
+##    res = len(tab)
+##    for i in range(len(tab)):
+##        if tab[i] == n:
+##            res = i  
+##    return res
+##
+##print(recherche([5, 3],1))
+##print(recherche([2,4],2))
+##print(recherche([2,3,5,2,4],2))
+
+#exrecice 2          //2
+from math import sqrt
+# import de la fonction racine carrée
+
+def distance(point1, point2):
+    return sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
+
+def plus_courte_distance(tab, depart):
+    res = []
+    temp = 0
+    for i in tab:
+        res.append(distance(depart, i))
+    
+    for j in range(len(res)):
+        if temp < res[j]:
+            temp = res[j]
+    return temp
+        
+        
+        
+        
+        
+    
+print(plus_courte_distance([(7, 9), (2, 5), (5, 2)], (0, 0)))
