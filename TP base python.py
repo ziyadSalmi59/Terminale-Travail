@@ -30,12 +30,19 @@ histoire           0
                    1
                     
 
-
-
-
-svt
-musique
-math
+-----------------SQL
+#update
+update "nom ed la table"
+SET "colone1" = "valeur1", ...
+WHERE "contiditon"...
+#insert into
+INSERT INTO nom_de_la_table (colonne1, colonne2, ...)
+VALUES (valeur_1a, valeur_2a, ...),
+       (valeur_1b, valeur_2b, ...),
+       (valeur_1c, valeur_2c, ...);
+#Delet from
+DELETE FROM nom_de_la_table
+WHERE condition;
     
     
         
