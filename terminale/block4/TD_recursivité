@@ -1,0 +1,26 @@
+###q1
+##def somme_iteratif(e):
+##    for i in range(10):
+##        e += i
+##somme_iteratif(0)
+##
+###q2a
+##def somme_recursif(n):
+##    if n == 0 :
+##        return 0
+##    else : 
+##        return n + somme_recursif(n-1)
+##
+##somme_recursif(100)
+##
+###q2b
+##pas besoin decrire des boucles et autres, c'est plus efficace et plus rapîde
+##
+###q3
+
+
+    
+
+    
+        
+    
