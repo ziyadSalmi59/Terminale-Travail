@@ -1,1 +1,15 @@
---
+-EXERCICE 2
+1- SELECT livre.titre FROM livre JOIN emprunt ON emprunt.isbn = livre.isbn
+2- SELECT * FROM livre JOIN emprunt ON emprunt.isbn = livre.isbn WHERE retour < "2020-03-31"
+3- SELECT auteur.nom, auteur.prenom FROM auteur_de JOIN auteur ON auteur.a_id = auteur_de.a_id 
+                                                JOIN livre ON auteur_de.isbn = livre.isbn
+WHERE livre.titre = "1984";
+4-SELECT DISTINCT usager.nom, usager.prenom FROM usager JOIN emprunt ON usager.code_barre = emprunt.code_barre;
+5-SELECT DISTINCT usager.nom, usager.prenom FROM usager JOIN emprunt ON usager.code_barre = emprunt.code_barre ORDER BY usager.nom ASC;
+
+-EXERCICE 3
+1) Tout selectionner depûis livre dont le titre contient robot
+2) Selectionner le nom et le prenom des usager habitant à guingamp
+3) selectionner le nom et le prenom des usager dont le retour des livres emprenter se fais avant 2020-04-02
+4) Selectionner le titre du livre datant de plus de lannée 1990
+
