@@ -1,0 +1,16 @@
+#Exercice 2
+def prems(n):
+    if n == 0:
+        return None
+    else:
+        print("un très mauvais exemple")
+        prems(n-1)
+
+prems(10)
+
+#Exercice 3
+##1- f(n)= nx(n-1)!
+##2- Un = n X Un-1
+3-
+
+
