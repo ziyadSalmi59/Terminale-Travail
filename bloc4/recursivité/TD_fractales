@@ -1,0 +1,21 @@
+
+##
+##def dessine(n):
+##    if n > 0:
+##        turtle.forward(n)
+##        turtle.right(90)        
+##        dessine(n-2)
+##dessine(100)
+
+import turtle
+
+def dessine(n):
+    if n == 0:
+        pass
+    else: # (Appel récursif)
+        turtle.forward(n)
+        turtle.right(90)
+        dessine(n-10)
+
+
+dessine(500)
