@@ -13,3 +13,16 @@ WHERE livre.titre = "1984";
 3) selectionner le nom et le prenom des usager dont le retour des livres emprenter se fais avant 2020-04-02
 4) Selectionner le titre du livre datant de plus de lannée 1990
 
+
+-EXERCICE 4
+1- Elle reussi, dans la table x, b est la somme entre b et a
+2- Elle échoue car on a des nombres negatifs
+3- Elle reussi car ça ajoute a z les valeurs 1, 17, 1
+4- reussi car on ajoute a la table z les valeurs 1, 18, 1
+5- il echoue car 1 et 10 sont a et c et sont uniques
+7- On ne peut pas car c'est une clef primaire
+8- ça reussi car ca insert 40 et 20 dans c et d
+9- ça echoue car 40 est superieur a 20
+10- pas compris
+
+
