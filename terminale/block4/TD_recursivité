@@ -18,6 +18,46 @@
 ##
 ###q3
 
+EXERCICE 2
+#Flocon
+import turtle
+def vonkoch(n,l):
+    if n > 0:
+        vonkoch(n-1, 1)
+        turtle.left(60)
+        vonkoch(n-1, 1)
+        turtle.right(120)
+        vonkoch(n-1, 1)
+        turtle.left(60)
+        vonkoch(n-1, 1)
+    else:
+        turtle.forward(5)
+
+
+for i in range(3):
+    vonkoch(4,100)
+    turtle.right(120)
+    
+ EXERCICE 3
+ import turtle, math
+
+def carre(edge):
+    for i in range(4):
+        turtle.forward(edge)
+        turtle.right(90)
+
+def symboleCarre(c):
+    if c < 10 :
+        return None
+    else:
+        carre(c)
+        turtle.forward(c/2)
+        turtle.right(45)
+        symboleCarre((math.sqrt(2*((c/2)**2))))
+    
+symboleCarre(200)
+
+
 
     
 
