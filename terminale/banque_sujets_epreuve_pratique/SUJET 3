@@ -1,0 +1,16 @@
+#EXERCICE 1 SUJET 3
+#Cas 1 iterratif
+def multiplication(n1, n2):
+    if n1 >= 0 and n2 >= 0:
+        res = 0
+        for i in range(n1):
+            res += n2
+        return res
+    
+    elif n1 <0 and n2 <0 :
+        return multiplication(-n1,-n2)
+    
+    elif n1 <0 and n2 >0 :
+        return -multiplication(-n1,n2)
+        
+print(multiplication(-0, -78))
