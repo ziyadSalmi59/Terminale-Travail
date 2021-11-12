@@ -1,0 +1,26 @@
+
+class Compte_bancaire :
+    def __init__(self, solde, titulaire):
+        self.solde = solde
+        self.titulaire = titulaire
+
+    def retirer_argent(self, montant):
+        if montant > self.solde:
+            self.solde = self.solde - montant
+            return montant
+    
+    def deposer_argent(self, montant):
+        self.solde = self.solde + montant
+        return None
+    
+
+compte_Ziyad = Compte_bancaire(100, "Zyiad")
+compte_Ismael = Compte_bancaire(50, "Ismael")
+
+billet = compte_Ziyad.retirer_argent(50)
+compte_Ismael.retirer_argent(billet)
+
+
+print("Ziyad a", compte_Ziyad.solde)
+print("Ismael a", compte_Ismael.solde)
+
