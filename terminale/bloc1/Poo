@@ -1,4 +1,4 @@
-
+Exercice base
 class Compte_bancaire :
     def __init__(self, solde, titulaire):
         self.solde = solde
@@ -23,4 +23,56 @@ compte_Ismael.retirer_argent(billet)
 
 print("Ziyad a", compte_Ziyad.solde)
 print("Ismael a", compte_Ismael.solde)
+
+Exercice 1:
+
+class Eleve :
+    def __init__(self, nom, classe, note):
+        self.nom = nom
+        self.classe = classe
+        self.note = note
+    
+    def a_la_moyenne(self):
+        if self.note >= 10:
+            return True
+        else :
+            return False
+
+def compare(elv1, elv2):
+    """
+    renvoie le nom de l'élève ayant la meilleure note.
+    elv1 (Eleve) : eleve 1
+    elv2 (Eleve) : eleve 2
+    """    
+    if elv1.note > elv2.note:
+        return elv1.nom
+    
+    elif elv1.note < elv2.note:
+        return elv2.nom
+    
+    else:
+        return elv1.nom, elv2.nom
+
+eleve1 = Eleve('jean', '1ere', 20)
+eleve2 = Eleve('Paul', '1ere', 15)
+eleve3 = Eleve('Marc', '1ere', 15)
+
+print(eleve1.a_la_moyenne())
+print(Eleve.a_la_moyenne(eleve1))
+
+print(compare(eleve2, eleve3))
+
+
+
+
+
+
+Exercice 2:
+class TriangleRectangle:
+    def __init__ (self, cote1, cote2, hypotenuse):
+        self.cote1 = cote1
+        self.cote2 = cote2
+        self.hypotenuse = hypotenuse
+        
+        
 
