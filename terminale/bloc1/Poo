@@ -73,6 +73,43 @@ class TriangleRectangle:
         self.cote1 = cote1
         self.cote2 = cote2
         self.hypotenuse = hypotenuse
-        
-        
+
+#exercice3
+import random
+class Personnage:
+
+    def __init__(self, nom, points_de_vie, aptitude_combat):
+        self.vie = points_de_vie
+        self.nom = nom
+        self.apt = aptitude_combat
+
+    def perd_vie(self):
+        random_Num = random.random()
+        if random_Num < 0.5:
+            if (random_Num * 10) > self.apt:
+                nbPoint = 1
+                self.vie = self.vie - nbPoint
+                print(self.nom+ " perd "+ str(nbPoint)+" de vie")
+            else:
+                print(self.nom+ " ne perd pas de vie")
+
+
+
+def game(cmbt1, cmbt2):
+
+    while cmbt1.vie > 0 and cmbt2.vie > 0:
+        cmbt1.perd_vie()
+        cmbt2.perd_vie()
+
+    if cmbt1.vie <= 0 and cmbt2.vie > 0:
+        msg = str(cmbt2.nom) + " est vainqueur, il lui reste encore " + str(cmbt2.vie) + " points alors que "+str(cmbt1.nom)+" est mort"
+    elif cmbt2.vie <= 0 and cmbt1.vie > 0:
+        msg = str(cmbt1.nom) + " est vainqueur, il lui reste encore " + str(cmbt1.vie) + " points alors que " + str(cmbt2.nom) +" est mort"
+    else:
+        msg = "Les deux combattants sont morts en même temps"
+
+    return msg
+
+frodon = Personnage("Frodon", 20,2)
+araignee = Personnage("Araignée", 10,3)
 
