@@ -138,3 +138,33 @@ frodon = Personnage("Frodon", 20,5)
 araignee = Personnage("Araignée", 10,3)
 
 
+Exercice 4
+from math import sqrt
+class Point:
+    def __init__(self, x, y):
+        """
+        Initialise les variables
+        abscisse (int) : abscisse x
+        ordonnee (int) : ordonnee y 
+        """
+        self.x = x
+        self.y = y
+        self.xa = xa
+        self.xb = xb
+        self.ya = ya
+        self.yb = yb
+        
+    def distance(self):
+        res = sqrt(self.x**2 + self.y**2)
+        return res
+    
+    def longueur_segment(self.xa, self.xb,sefl.ya, self.yb):
+        resLG = sqrt( (self.xa - self.xb)**2 + (self.ya - self.yb)**2)
+        return resLG
+        
+
+pointA = Point(-2,5)
+print(pointA.longueur_segment())
+    
+    
+        
