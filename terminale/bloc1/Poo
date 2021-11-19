@@ -68,11 +68,6 @@ print(compare(eleve2, eleve3))
 
 
 Exercice 2:
-class TriangleRectangle:
-    def __init__ (self, cote1, cote2, hypotenuse):
-        self.cote1 = cote1
-        self.cote2 = cote2
-        self.hypotenuse = hypotenuse
 
 #exercice3
 import random
@@ -81,25 +76,54 @@ class Personnage:
     def __init__(self, nom, points_de_vie, aptitude_combat):
         self.vie = points_de_vie
         self.nom = nom
-        self.apt = aptitude_combat
+        self.apt = self.__limiter_aptitude_combat(aptitude_combat)
 
-    def perd_vie(self):
+    def perd_vie(self, attack_sp_pv):
         random_Num = random.random()
         if random_Num < 0.5:
             if (random_Num * 10) > self.apt:
                 nbPoint = 1
-                self.vie = self.vie - nbPoint
+                self.vie = self.vie - nbPoint - attack_sp_pv
                 print(self.nom+ " perd "+ str(nbPoint)+" de vie")
             else:
                 print(self.nom+ " ne perd pas de vie")
+    
+    def attack_Sp():
+        attackSP = random.randint(0, 10)
+        if attackSP > 0 and attackSP < 3:
+            return 1
+            print("Coup attaque special attack special !")
+        print("attack special raté")
+            
+        
+        
+        
+    
+    def __limiter_aptitude_combat(self, aptitude_combat):
+        if aptitude_combat > 4:
+            return 4
+        else:
+            return aptitude_combat
 
 
 
 def game(cmbt1, cmbt2):
 
     while cmbt1.vie > 0 and cmbt2.vie > 0:
-        cmbt1.perd_vie()
-        cmbt2.perd_vie()
+        if cmbt1.vie > 0 and cmbt1.vie < 2:
+            print("tentative attack special")
+            cmbt1.attack_sp()
+            if attack_sp() == 1:
+                cmbt2.perd_vie(3)
+            
+        if cmbt2.vie > 0 and cmbt2.vie < 2:
+            print("tentative attack special")
+            cmbt2.attack_sp()
+            if attack_sp() == 1:
+                cmbt1.perd_vie(3)
+            
+        cmbt1.perd_vie(0)
+        cmbt2.perd_vie(0)
 
     if cmbt1.vie <= 0 and cmbt2.vie > 0:
         msg = str(cmbt2.nom) + " est vainqueur, il lui reste encore " + str(cmbt2.vie) + " points alors que "+str(cmbt1.nom)+" est mort"
@@ -110,6 +134,7 @@ def game(cmbt1, cmbt2):
 
     return msg
 
-frodon = Personnage("Frodon", 20,2)
+frodon = Personnage("Frodon", 20,5)
 araignee = Personnage("Araignée", 10,3)
+
 
