@@ -167,4 +167,27 @@ pointA = Point(-2,5)
 print(pointA.longueur_segment())
     
     
+#exercice5
+1-2)
+from math import sqrt
+class Fraction:
+    def __init__(self, nome, denome):
+        """
+        Initialise les variables
+        abscisse (int) : abscisse x
+        ordonnee (int) : ordonnee y 
+        """
+        self.numerateur = nome
+        self.denominateur = denome
+    
+    def __repr__(self):
+        if self.denominateur == 1:
+            return str(self.numerateur)
+        else:
+            return str(self.numerateur) + " / " + str(self.denominateur)
+
+
+A = Fraction(12, 1)
+print(A)
         
+
