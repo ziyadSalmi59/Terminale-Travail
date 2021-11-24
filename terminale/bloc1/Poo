@@ -189,5 +189,44 @@ class Fraction:
 
 A = Fraction(12, 1)
 print(A)
+
+3)
+from math import sqrt
+class Fraction:
+    def __init__(self, nome, denome):
+        """
+        Initialise les variables
+        abscisse (int) : abscisse x
+        ordonnee (int) : ordonnee y 
+        """
+        self.numerateur = nome
+        self.denominateur = denome
+    
+    def __repr__(self):
+        if self.denominateur == 1:
+            return str(self.numerateur)
+        else:
+            return str(self.numerateur) + " / " + str(self.denominateur)
+    
+    def __eq__(self, frac2):
+        res1 = self.numerateur / self.denominateur
+        res2 = frac2.numerateur / frac2.denominateur
+        return res1 == res2
+    
+    def __lt__(self, frac2):
+        res1 = self.numerateur / self.denominateur
+        res2 = frac2.numerateur / frac2.denominateur
+        return res1 < res2
+    
+    def __gt__(self, frac2):
+        return None
         
+
+
+Frac1 = Fraction(12, 21)
+Frac2 = Fraction(12, 35)
+print(Frac1 > Frac2)
+# print(Frac2 < Frac1)
+
+
 
