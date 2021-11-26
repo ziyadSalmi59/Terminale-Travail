@@ -1,0 +1,58 @@
+from tkinter import *
+import random
+
+#-------------------------
+# DEFINITION DES FONCTIONS
+#-------------------------
+def effacer():
+    zoneDessin.delete(ALL)
+    
+def dessinerCercle():
+    x = random.randint(0,w)
+    y = random.randint(0,h)
+    #zoneDessin.create_image(x, y,image = balle)
+    zoneDessin.create_image(w/2, h/2,image = balle)
+    print("tire")
+#----------------------------------
+# DEFINITION DES VARIABLES GLOBALES
+#----------------------------------
+w = 550
+h = 550
+
+#-------------------------------------
+# CREATION DE LA FENETRE ET DES WIDGETS
+#-------------------------------------
+
+# Création de la fenêtre principale (main window)
+maFenetre = Tk()
+maFenetre.title('Cercle')
+
+# Création d'un widget Canvas (zone graphique)
+zoneDessin = Canvas(maFenetre, width = w, height = h, bg = 'white')
+zoneDessin.pack(padx = 5, pady = 5)
+
+# Création d'un widget Button (bouton Effacer)
+boutonEffacer = Button(maFenetre, text ='Effacer', command = effacer)
+boutonEffacer.pack(side = LEFT, padx = 5, pady = 5)
+
+# Création d'un widget Button (bouton Quitter)
+boutonQuitter = Button(maFenetre, text ='Quitter', command = maFenetre.destroy)
+boutonQuitter.pack(side = LEFT, padx = 5, pady = 5)
+
+# Création d'un widget Button (bouton Go)
+boutonGo = Button(maFenetre, text ='Tirer', command = dessinerCercle)
+boutonGo.pack(side = LEFT, padx = 10, pady = 10)
+
+#-----------------------
+# GESTION DES EVENEMENTS
+#-----------------------
+#----
+Bg = PhotoImage(file="tk_cible.gif")
+zoneDessin.create_image(w/2, h/2,image = Bg)
+
+#----
+balle = PhotoImage(file="tk_impact.gif")
+
+
+#Lancement du gestionnaire d'événements
+maFenetre.mainloop() 
