@@ -13,45 +13,42 @@ def pile_alternee(entierN):
 
 afficher_pile(pile_alternee(7))
 
-
 #exercice 2 q1-2-3
-##p1 = creer_pile()
-##def vider_pile(pile):
-##    pass
+p1 = creer_pile()
+def vider_pile(pile):
+    pass
 
 
-##def sommet_pile(pile):
-##    if est_vide(p1):
-##        return None
-##    else:
-##        x = depiler(p1)
-##        afficher_pile(p1)
-##        empiler(p1, x)
-##        afficher_pile(p1)
-##    return x
-##
-##for i in range(4):
-##    empiler(p1, i)
+def sommet_pile(pile):
+    if est_vide(p1):
+        return None
+    else:
+        x = depiler(p1)
+        afficher_pile(p1)
+        empiler(p1, x)
+        afficher_pile(p1)
+    return x
+
+for i in range(4):
+    empiler(p1, i)
 
 
-##p1, p2, Tpile = creer_pile() ,creer_pile(), 0
-##
-##for i in range(4):
-##    empiler(p1, i)
-##    
-##def taille_pile(pile):
-##    global Tpile
-##    
-##    while not est_vide(p1):
-##        x = depiler(p1)
-##        empiler(p2, x)
-##        Tpile += 1
-##    afficher_pile(p1)
-##    afficher_pile(p2)
-##    print(Tpile, x)
-##
-##taille_pile(p1)
+p1, p2, Tpile = creer_pile() ,creer_pile(), 0
 
+for i in range(4):
+    empiler(p1, i)
     
+def taille_pile(pile):
+    global Tpile
+    
+    while not est_vide(p1):
+        x = depiler(p1)
+        empiler(p2, x)
+        Tpile += 1
+    afficher_pile(p1)
+    afficher_pile(p2)
+    print(Tpile, x)
+
+taille_pile(p1)
 
         
