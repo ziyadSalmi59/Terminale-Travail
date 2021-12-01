@@ -1,0 +1,17 @@
+#exrecice 1 q3
+from ma_pile import creer_pile, est_vide, empiler, depiler, afficher_pile
+
+p1 = creer_pile()
+
+def pile_alternee(entierN):
+    for i in range(entierN):
+        if i % 2 == 0:
+            empiler(p1, i)
+        else:
+            empiler(p1, -i)
+    return p1
+
+afficher_pile(pile_alternee(7))
+    
+
+        
