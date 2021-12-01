@@ -51,4 +51,25 @@ def taille_pile(pile):
 
 taille_pile(p1)
 
+
+
+#Exercice 3
+p1 = creer_pile() 
+def est_bien_parenthesee(chaine):
+    for par in chaine:
+        if par == "(":
+            empiler(p1, par)
+        else:
+            if est_vide(p1):
+                return False
+            else:
+                depiler(p1)
+                
+    if est_vide(p1):
+        return True
+    else :
+        return False
         
+print(est_bien_parenthesee("(x+2(y-1)"))
+            
+
