@@ -118,5 +118,30 @@ def evaluer_postfixee(chaine):
     return (str(v1) + op +  str(v2))
 
 print(eval(evaluer_postfixee("3 5 +")))
+
+
+
+
+
+
+
+
+class Pile:
+    def __init__ (self, taille_max):
+        self.tmax = taille_max
+        self.taille = 0
+        self.contenu = [None]*self.tmax
+    
+    def est_vide(self):
+        if self.taille == 0:
+            return "elle est vide"
+
+ma_pile = Pile(10)
+print(ma_pile.contenu)
+print(ma_pile.est_vide())
+        
+
+
+
             
 
