@@ -9,6 +9,20 @@ def pile_alternee(entierN):
             empiler(p1, i)
         else:
             empiler(p1, -i)
+def evaluer_postfixee(chaine):
+    l = separer_expression(chaine)
+    q = creer_pile()
+    v1, v2 = 0, 0
+    for element in l:
+        if not est_operateur(element):
+            empiler(q, element)         
+        else:
+            v1 = depiler(q)
+            v2 = depiler(q)
+            op = element
+    return (str(v1) + op +  str(v2))
+
+print(eval(evaluer_postfixee("3 5 +")))
     return p1
 
 afficher_pile(pile_alternee(7))
@@ -87,5 +101,22 @@ def est_operateur(data):
     
 print(est_operateur("/"))
 print(separer_expression("3 5 + 4 2 - *"))
+
+
+
+def evaluer_postfixee(chaine):
+    l = separer_expression(chaine)
+    q = creer_pile()
+    v1, v2 = 0, 0
+    for element in l:
+        if not est_operateur(element):
+            empiler(q, element)         
+        else:
+            v1 = depiler(q)
+            v2 = depiler(q)
+            op = element
+    return (str(v1) + op +  str(v2))
+
+print(eval(evaluer_postfixee("3 5 +")))
             
 
