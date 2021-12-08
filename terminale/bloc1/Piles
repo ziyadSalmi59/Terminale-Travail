@@ -140,6 +140,16 @@ ma_pile = Pile(10)
 print(ma_pile.contenu)
 print(ma_pile.est_vide())
         
+#exercice 1
+def est_balise_fermante(char):
+    if char[0] == "<" and char[1] == "/" and char[len(char) - 1] == ">":
+        return True
+    else :
+        return False
+        
+print(est_balise_fermante("<toto>"))
+
+#exercice 2
 
 
 
