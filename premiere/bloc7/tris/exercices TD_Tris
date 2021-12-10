@@ -58,22 +58,85 @@ print(tri_par_insertion([1,4,6,2,8]))
 
 
 
-#exrecice3
-def tri(list):
-    valeur = list[0]
-    poids = list[1]
+import random
+
+#exercice3
+def tri(objet):
+    valeur = objet[0]
+    poids = objet[1]
     return valeur/poids
 
-list_objets = [[7,12], [4,11], [3,8], [3,10]]
-listObjetsTriee = sorted(list_objets, key=tri, reverse = True)
+liste_objets = [[7,12], [4,11], [3,8], [3,10]]
+listeObjetsTriee = sorted(liste_objets, key=tri, reverse = True)
 
 p = 0
 listeFinale = []
 max = 30
-for objs in tri(listObjetsTriee):
+for objs in listeObjetsTriee:
     if p + objs[1] <= max:
         listeFinale.append(objs)
         p += objs[1]
 
-print(listeFinale, p)
+#print(listeFinale)
+
+
+
+#Exercice4
+#1
+obj = 1
+listObjets = []
+while obj <= 50:
+    valeur = random.random()*9+1
+    poids = random.random()*9+1
+    listObjets.append([valeur,poids])
+    obj += 1
+
+#2
+##for i in range(10):
+##    print(listObjets[i])
+    
+
+def remplirSacADos(liste, max):
+    """
+    La fonction sert a remplir la sacados en ne depassant pas la limite de celui-ci
+    Liste (list) : list de lists
+    max (int) : la valeur aximum du sac a dos
+    revoie les objets qu'on va mettre dans le sac a dos
+    """
+    pmax = max
+    psac = 0
+    res = []
+    for objs in liste:
+        if psac + objs[1] <= pmax:
+            res.append(objs)
+            psac += objs[1]
+
+    return(res)
+
+#Voir le poid du sac a dos 
+vals = remplirSacADos(listObjets, 50)
+
+poid = 0
+valeur = 0
+for i in vals:
+    poid += i[1]
+    valeur += i[0]
+
+print("le poid du sac est: ", poid)
+print("le nombre d'elements est:", valeur)
+
+        
+
+
+    
+
+    
+
+     
+
+
+
+
+
+
 
