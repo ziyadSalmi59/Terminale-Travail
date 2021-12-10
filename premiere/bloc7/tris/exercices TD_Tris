@@ -55,3 +55,25 @@ def tri_par_insertion(t):
 
 print(tri_par_insertion([1,4,6,2,8]))
 
+
+
+
+#exrecice3
+def tri(list):
+    valeur = list[0]
+    poids = list[1]
+    return valeur/poids
+
+list_objets = [[7,12], [4,11], [3,8], [3,10]]
+listObjetsTriee = sorted(list_objets, key=tri, reverse = True)
+
+p = 0
+listeFinale = []
+max = 30
+for objs in tri(listObjetsTriee):
+    if p + objs[1] <= max:
+        listeFinale.append(objs)
+        p += objs[1]
+
+print(listeFinale, p)
+
