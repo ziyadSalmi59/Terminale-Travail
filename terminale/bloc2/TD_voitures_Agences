@@ -1,4 +1,47 @@
-1- SELECT * FROM Agences
-2- SELECT nom, ville FROM Agences
-3-SELECT nom FROM Agences WHERE ville = "Lorient"
-4- SELECT nom FROM Agences WHERE code LIKE '56%'
+'''SQL
+#agences
+1-
+SELECT * FROM Agences;
+2-
+SELECT nom, ville FROM Agences;
+3-
+SELECT nom FROM Agences WHERE ville = "Lorient";
+4-
+SELECT nom FROM Agences WHERE code LIKE '56%';
+5-
+SELECT nom, code FROM Agences WHERE SUBSTR(code, 1,2) = '56';
+6-
+SELECT DISTINCT ville FROM Agences;
+7-
+SELECT nom, code FROM Agences WHERE SUBSTR(code, 1,2) IN ('56', '29', '35', '22');
+8-
+SELECT id FROM Agences WHERE SUBSTR(code, 1,2) NOT IN ('56', '29', '35', '22');
+9-
+SELECT id FROM Agences WHERE SUBSTR(code, 1,2) IN ('56', '29', '35', '22');
+
+#Vehicules
+1-
+SELECT * FROM Vehicules;
+2-
+SELECT MIN(age), MAX(age) FROM Vehicules;
+3-
+SELECT nom FROM Vehicules WHERE age = 3;
+4-
+SELECT nom FROM Vehicules WHERE age = 3;
+5-
+SELECT MAX(kilometrage) FROM Vehicules;
+6-
+SELECT AVG(kilometrage) FROM Vehicules;
+7-
+SELECT kilometrage DESC FROM Vehicules;
+8-
+9-
+SELECT MAX(kilometrage), immatriculation FROM Vehicules WHERE nom = "Renault Megane"
+10-
+
+
+#location
+1-
+SELECT * FROM Locations
+2-
+'''
