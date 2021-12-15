@@ -1,0 +1,4 @@
+1- SELECT * FROM Agences
+2- SELECT nom, ville FROM Agences
+3-SELECT nom FROM Agences WHERE ville = "Lorient"
+4- SELECT nom FROM Agences WHERE code LIKE '56%'
