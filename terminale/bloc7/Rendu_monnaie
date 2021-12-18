@@ -1,0 +1,37 @@
+#rendu monnaie
+def rendu_monnaie(x):
+  """
+  x (int): montant à rendre (en centimes) 
+  renvoie la liste des pièces utilisées (en centimes).
+  """
+  assert type(x) == int, 'la valeur de X doit etre de type int'
+  CmpteEnBanque = [500,200,100,10,20,10,5,2,1]
+  assert type(CmpteEnBanque) == list, 'Le compte en banque doit etre de type list'
+  i = 0
+  while(x>0):
+    if(CmpteEnBanque[i] > x):
+      assert type(i) == int, 'La valeur de i doit etre de type int'
+      i += 1
+    else:
+      print(str(CmpteEnBanque[i]))
+      x -= CmpteEnBanque[i];
+rendu_monnaie(40)
+
+#rendu monnaie Ada
+def rendu_monnaie(x):
+  """
+  x (int): montant à rendre (en centimes) 
+  renvoie la liste des pièces utilisées (en centimes).
+  """
+  assert type(x) == int, 'la valeur de X doit etre de type int'
+  CmpteEnBanque = [500,200,100,10,20,10,5,2,1]
+  assert type(CmpteEnBanque) == list, 'Le compte en banque doit etre de type list'
+  i = 0
+  while(x>0):
+    if(CmpteEnBanque[i] > x):
+      assert type(i) == int, 'La valeur de i doit etre de type int'
+      i += 1
+    else:
+      print(str(CmpteEnBanque[i])+ " A")
+      x -= CmpteEnBanque[i];
+rendu_monnaie(40)
