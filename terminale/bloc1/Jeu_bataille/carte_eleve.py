@@ -41,4 +41,6 @@ def creer_jeu():
         f1.enfile(paquet[i])
         f2.enfile(paquet[i+1])
         i = i + 2
-        
+    return f1, f2
+
+print(creer_jeu())
