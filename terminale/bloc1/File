@@ -60,7 +60,7 @@ class File:
             compteur += 1
             
             
- from visualisation_arbre import *
+from visualisation_arbre import *
 from random import randint
 
 # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
@@ -82,7 +82,6 @@ def est_vide(arbre):
     >>> est_vide(arbre_cours)
     False
     
-    
     >>> est_vide(arbre_feuille)
     False
     
@@ -95,8 +94,6 @@ def est_vide(arbre):
     else:
         return False
 
-print(est_vide(arbre_cours))
-
 def est_feuille(arbre):
     '''
     DOCUMENTATION :
@@ -105,8 +102,19 @@ def est_feuille(arbre):
     return (bool) : True si l'arbre est une feuille, False sinon
     
     TESTS :
+    >>> arbre_est_feuille = [1, [], []]
+    >>> est_feuille(arbre_est_feuille)
+    True
+    
+    >>> arbre_non_feuille = [1, [3, [], []], [4, [], []]]
+    >>> est_feuille(arbre_non_feuille)
+    False
     '''
-    # A compléter
+    if arbre[1] != [] and arbre[2] != []:
+        return False
+    else:
+        return True
+    
 
 def racine(arbre):
     '''
@@ -114,13 +122,21 @@ def racine(arbre):
     Description de la fontion : Renvoie la valeur du noeud racine
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (int, str, etc...) : Valeur du noeud racine
-    précondition : A compléter
+    précondition : il faut que l'arbre ne soit pas vide pour recuperer sa racine
     
     TESTS :
+    arbre_feuille = [1, [], []]
+    >>> racine(arbre_feuille)
+    True
+    
+    arbre_cours = [1, [2, [], []], [3, [], []]]
+    >>> racine(arbre_cours)
+    True
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-    assert ..., " " # A compléter
+    assert est_vide(arbre) == True, "il faut que l'arbre ne soit pas vide pour recuperer sa racine !" # A compléter
     # Code de la fonction à compléter
+    return arbre[0]
 
 def SAG(arbre):
     '''
@@ -128,13 +144,21 @@ def SAG(arbre):
     Description de la fontion : Renvoie le sous-arbre gauche de l'arbre
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (list) : sous-arbre gauche
-    précondition : A compléter
+    précondition : arbre ne doit pas être vide
     
     TESTS :
+    arbre_feuille = [1, [], []]
+    >>> SAG(arbre_feuille)
+    None
+    
+    arbre_cours = [1, [2, [], []], [3, [], []]]
+    >>> SAG(arbre_cours)
+    arbre_cours[1]
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-    assert ..., " " # A compléter
+    assert est_vide(arbre) == False, " impossible de renvoyer le SAG d'un arbre vide"
     # Code de la fonction à compléter
+    return arbre[1]
 
 def SAD(arbre):
     '''
@@ -142,13 +166,21 @@ def SAD(arbre):
     Description de la fontion : Renvoie le sous-arbre droit de l'arbre
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (list) : sous-arbre droit
-    précondition : A compléter
+    précondition : Arbre ne doit pas etre vide
     
     TESTS :
+    arbre_feuille = [1, [], []]
+    >>> SAd(arbre_feuille)
+    None
+    
+    arbre_cours = [1, [2, [], []], [3, [], []]]
+    >>> SAD(arbre_cours)
+    arbre_cours[2]
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail) 
-    assert ..., " " # A compléter
+    assert est_vide(arbre) == False, " impossible de renvoyer le SAG d'un arbre vide" 
     # Code de la fonction à compléter
+    return arbre[2]
 
 def taille(arbre):
     '''
@@ -158,8 +190,25 @@ def taille(arbre):
     return (int) : Taille de l'arbre
     
     TESTS :
+    arbre_vide = []
+    >>> taille(arbre_vide)
+    True
+    
+    arbre_feuille = [1, [], []]
+    >>> taille(arbre_feuille)
+    0
+    
+    arbre_cours = [1, [2, [], []], [3, [], []]]
+    >>> taille(arbre_cours)
+    2
     '''
-    # A compléter
+    if est_vide(arbre):
+        return 0
+    else:
+        return 1 + taille(SAG(arbre)) + taille(SAD(arbre))
+        
+print(taille(arbre_cours))
+    
 
 def hauteur(arbre):
     '''
@@ -171,7 +220,12 @@ def hauteur(arbre):
     
     TESTS :
     '''
-    # A compléter
+    if est_vide(arbre):
+        return -1
+    else:
+        return 1 + hauteur(SAG(arbre)) + hauteur(SAD(arbre))
+
+print(hauteur(arbre_cours))
 
 def cree_arbre_complet(h, maxi):
     '''
@@ -182,7 +236,8 @@ def cree_arbre_complet(h, maxi):
     maxi (int) : valeur maximale des noeuds
     return (list) : arbre créé
     '''
-    # A compléter
+        
+        
 
 def cree_peigne_gauche(h, maxi):
     '''
@@ -238,10 +293,8 @@ if __name__ == '__main__':
     # A compléter
 
         
-        while not tmpFile.est_vide():
-            Tfile.enfiler(tmpFile.defiler)
-            
-        return "la taille de votre file est " + compteur
-
-    
-        
+##        while not tmpFile.est_vide():
+##            Tfile.enfiler(tmpFile.defiler)
+##            
+##        return "la taille de votre file est " + compteur
+      
