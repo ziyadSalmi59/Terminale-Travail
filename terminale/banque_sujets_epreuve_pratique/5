@@ -1,0 +1,119 @@
+#ex1
+def RechercheMinMax(tab):
+  min = 0
+  max = 0
+  if tab == []:
+    return {"min": None, "max": None}
+  for i in tab:
+    if i <= main:
+      min = 1
+    if i >= max
+  dictio = {"min": min, "max": max}
+  return dictio
+
+
+#ex2
+import random
+
+class Carte:
+  def __init__ (self, c, v):
+    assert c > 5 or c < 1, "le nombre de couleurs doit etre entre 1 et 4!"
+    assert v > 13 or v < 1, "la valeur doit etre entre 1 et 13!"
+    self.Couleur = c 
+    self.Valeur = v
+
+
+  def getNom(self):
+    if ( self.Valeur > 1 and self.Valeur < 11): 
+      return str( self.Valeur)
+    elif self.Valeur == 11: 
+      return "Valet"
+    elif self.Valeur == 12: 
+      return "Dame"
+    elif self.Valeur == 13: 
+      return "Roi"
+    else:
+      return "As"
+
+  def getCouleur(self):
+    return ['pique', 'coeur', 'carreau', 'trefle'][self.Couleur - 1]
+
+class PaquetDeCarte: 
+  def __init__ (self):
+    self.contenu = []
+
+  def remplir(self):
+    for i in range(26):
+      self.contenu.append(Carte(random.randint(1,4),random.randint(1,13)))
+
+  def getCarteAt(self, pos):
+    print(self.contenu)
+    assert pos > 25, "Vous ne pouvez pas choisir au dessus de 26 cartes !!"
+    return self.contenu[pos]
+
+unPaquet = PaquetDeCarte()
+unPaquet.remplir()
+uneCarte = unPaquet.getCarteAt(20)
+print(uneCarte.getNom() + " de " + uneCarte.getCouleur())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
