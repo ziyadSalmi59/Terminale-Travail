@@ -285,7 +285,6 @@ print(Frac1 * Frac2)
 
 
 
-IMPLEMENTATION POO
 from visualisation_arbre_PO import *
 from random import randint
 
@@ -310,18 +309,18 @@ class Arbre:
         return (bool) : True si l'arbre est vide, False sinon
         
         TESTS :
-        >>> arbre = Arbre()
-        >>> Arbre.est_vide(arbre)
+        >>> Arbre.est_vide(arbre_vide)
         True
         
-        
-        >>> #Deuxième appel de fonction 
-        Résultat souhaité
-        
-        >>> #Troisième appel de fonction 
-        Résultat souhaité
+        >>> Arbre.est_vide(arbre_feuille)
+        False
+
+        >>> Arbre.est_vide(arbre_cours)
+        False
         '''
         #A compléter
+        if self.racine == None:
+            return True
 
     def est_feuille(self):
         '''
@@ -330,6 +329,14 @@ class Arbre:
         return (bool) : True si l'arbre est une feuille, False sinon
         
         TESTS :
+        >>> Arbre.est_feuille(arbre_vide)
+        False
+        
+        >>> Arbre.est_feuille(arbre_feuille)
+        True
+
+        >>> Arbre.est_feuille(arbre_cours)
+        False
         '''
         #A compléter
 
@@ -342,6 +349,14 @@ class Arbre:
         précondition : A compléter
         
         TESTS :
+        >>> arbre2 = Arbre(1)
+        >>> Arbre.valeur_racine(arbre2)
+        1
+        
+        >>> noeud = Noeud(2, Noeud(8, Noeud(6, None, None), Noeud(9, None, None)), Noeud(1, Noeud(7, None, None), None))
+        >>> arbre_cours = Arbre(noeud)
+        >>> Arbre.valeur_racine(arbre_cours)
+        2
         '''
         # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
         assert ..., " " # A compléter
@@ -441,17 +456,21 @@ def cree_peigne_droit(h, maxi):
 if __name__ == '__main__':
     # Lancement des tests (laisser ces deux lignes de code inchangées)
     import doctest
-    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
 
-# PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
-noeud = Noeud(2, Noeud(8, Noeud(6, None, None), Noeud(9, None, None)), Noeud(1, Noeud(7, None, None), None))
-arbre = Arbre(noeud)
-#show(arbre, "arbre_du_cours")
+    # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
+    noeud = Noeud(2, Noeud(8, Noeud(6, None, None), Noeud(9, None, None)), Noeud(1, Noeud(7, None, None), None))
+    arbre_cours = Arbre(noeud)
+    #show(arbre, "arbre_du_cours")
 
-# PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
-noeud2 = Noeud(1, None, None)
-arbre_feuille = Arbre(noeud2)
-#show(arbre_feuille, "arbre_du_cours")
+    # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
+    noeud2 = Noeud(1, None, None)
+    arbre_feuille = Arbre(noeud2)
+    #show(arbre_feuille, "arbre_du_cours")
+    
+    noeud3 = Noeud(None,None,None)
+    arbre_vide = Arbre(noeud3)
+    
+    arbre_vide.est_vide()
 
 
 
@@ -470,4 +489,8 @@ arbre_feuille = Arbre(noeud2)
 
 # PARTIE 2 - Question 4
     # A compléter
+    
+    
+    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
+
 
